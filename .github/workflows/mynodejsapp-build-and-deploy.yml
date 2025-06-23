@@ -23,7 +23,7 @@ jobs:
 
       - name: Build and push docker image
         run: |
-          cd mynodejsapp
+          cd .
           docker build -t registry.digitalocean.com/my-registry123/mynodejsapp:${{ github.sha }} -f Dockerfile.production .
           docker login registry.digitalocean.com -u dockeruser -p ${{ secrets.REGISTRY_TOKEN }}
           docker push registry.digitalocean.com/my-registry123/mynodejsapp:${{ github.sha }}
