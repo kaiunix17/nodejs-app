@@ -3,7 +3,7 @@ name: "[My node js app] Build and deploy"
 on:
   push:
     branches:
-      - "main"
+      - "main" #
     paths:
       - '../../../nodejs-app/mynodejsapp/**'
       - '.github/workflows/mynodejsapp-build-and-deploy.yml'
