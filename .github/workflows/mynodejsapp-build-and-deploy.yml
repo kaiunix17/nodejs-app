@@ -25,7 +25,7 @@ jobs:
         run: |
           cd .
           docker build -t shohabbos7/java-application:${{ github.sha }} -f Dockerfile.production .
-            run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
           docker push shohabbos7/java-application:${{ github.sha }}
 
   deploy:
