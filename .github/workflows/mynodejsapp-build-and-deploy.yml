@@ -53,8 +53,8 @@ jobs:
         run: |
           ssh -p ${{ secrets.SSH_REMOTE_PORT}} ${{ secrets.SSH_REMOTE_USER }}@${{ secrets.SSH_REMOTE_HOST }} << 'EOF'
             cd /opt/kyiv.uz/  
-            sudo docker compose stop mynodejsapp-web-1
-            sudo docker compose rm mynodejsapp-web-1
+            sudo docker compose stop kyivuz-web-1
+            sudo docker compose rm kyivuz-web-1
             yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yaml
             docker compose up -d --remove-orphans
           EOF
