@@ -1,7 +1,7 @@
 services:
   web:
     image: shohabbos7/java-application:latest
-    command: ["sh", "-c", "npm start"]
+    #command: ["sh", "-c", "npm start"]
     restart: unless-stopped
     ports:
       - "3000:3000"
