@@ -47,12 +47,12 @@ jobs:
 
       - name: Copy files via SCP
         run: |
-          scp -P ${{ secrets.SSH_REMOTE_PORT}} -r ./deploy/docker-compose.yaml ${{ secrets.SSH_REMOTE_USER }}@${{ secrets.SSH_REMOTE_HOST }}:/opt/mynodejsapp/
+          scp -P ${{ secrets.SSH_REMOTE_PORT}} -r ./deploy/docker-compose.yaml ${{ secrets.SSH_REMOTE_USER }}@${{ secrets.SSH_REMOTE_HOST }}:/opt/kyiv.uz/
 
       - name: Restart remote app
         run: |
           ssh -p ${{ secrets.SSH_REMOTE_PORT}} ${{ secrets.SSH_REMOTE_USER }}@${{ secrets.SSH_REMOTE_HOST }} << 'EOF'
-            cd /opt/mynodejsapp/
+            cd /opt/mynodejsapp/  
             yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yaml
             docker compose up -d --remove-orphans
           EOF
