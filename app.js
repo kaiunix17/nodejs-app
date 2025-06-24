@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // Define a simple route that returns "Hello World"
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Ukraine!');
 });
 
 // Define a route that returns a message
