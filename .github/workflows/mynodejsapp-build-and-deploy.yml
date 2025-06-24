@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
     paths:
-      - '../../../mynodejsapp/**'
+      - '../../mynodejsapp/**'
       - '.github/workflows/mynodejsapp-build-and-deploy.yml'
   workflow_dispatch:
 
