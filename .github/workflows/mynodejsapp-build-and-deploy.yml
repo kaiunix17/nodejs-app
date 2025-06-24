@@ -54,5 +54,6 @@ jobs:
           ssh -p ${{ secrets.SSH_REMOTE_PORT}} ${{ secrets.SSH_REMOTE_USER }}@${{ secrets.SSH_REMOTE_HOST }} << 'EOF'
             cd /opt/kyiv.uz/  
             yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yaml
+            docker compose down
             docker compose up -d --remove-orphans
           EOF
