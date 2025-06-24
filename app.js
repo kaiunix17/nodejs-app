@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // Define a simple route that returns "Hello World"
 app.get('/', (req, res) => {
-    res.send('Fc Barcelona x Arsenal x Leo Messi x Ivan Rakitich x Fede Valverde llllj');
+    res.send('Fc Barcelona x Arsenal x Leo Messi x Ivan Rakitich x Fede Valverde x Pedri x Jude Bellingham');
 });
 
 // Define a route that returns a message
