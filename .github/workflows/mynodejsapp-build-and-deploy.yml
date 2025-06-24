@@ -27,7 +27,7 @@ jobs:
         run: |
           IMAGE_TAG=shohabbos7/java-application:latest
           echo "image_name=$IMAGE_TAG" >> "$GITHUB_OUTPUT"
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u shohabbos7 --password-stdin
           docker build -t $IMAGE_TAG -f Dockerfile.production .
           docker push $IMAGE_TAG
 
